@@ -93,37 +93,35 @@ let averageOdd = findaverage(oddNumbers)
 console.log("The average value in array of odd numbers:", averageOdd)
 
 // Perbandingan
-let comparisonResult = []
-if(minEven < minOdd){
-    comparisonResult.push("The lowest value (Min) is greater in an Even array")
-}else if(minEven === minOdd){
-    comparisonResult.push("The lowest value (Min) have the same value")
-}else{
-    comparisonResult.push("The lowest value (Min) is lower in an Odd array")
+function comparisonMin(arr1, arr2){
+    let comparisonResultMin = arr1 < arr2 ? "The lowest value (Min) is lower in an Even array": arr1 > arr2 ? "The lowest value (Min) is lower in an Odd array" : "The lowest value (Min) have the same value"
+    return comparisonResultMin;
 }
 
-if(maxEven > maxOdd){
-    comparisonResult.push("The highest value (Max) is greater in an Even array")
-}else if(maxEven === maxOdd){
-    comparisonResult.push("The highest value (Max) have the same value")
-}else{
-    comparisonResult.push("The highest value (Max) is greater in an Odd array")
+let comparisonResultMin = comparisonMin(minEven,minOdd)
+console.log(comparisonResultMin)
+
+function comparisonMax(arr1, arr2){
+    let comparisonResultMax = arr1 > arr2 ? "The highest value (Max) is greater in an Even array" : arr1 < arr2 ? "The highest value (Max) is greater in an Odd array" : "The highest value (Max) have the same value";
+    return comparisonResultMax;
 }
 
-if(totalEven === totalOdd){
-    comparisonResult.push("The totals in the Even and Odd arrays have the same value")
-} else{
-    comparisonResult.push("The total in the Even and Odd arrays haven't the same value")
+let comparisonResultMax = comparisonMax(maxEven,maxOdd)
+console.log(comparisonResultMax)
+
+function comparisonTotal(arr1, arr2){
+    let comparisonResultTotal = arr1 === arr2 ? "The totals in the Even and Odd arrays have the same value" : "The total in the Even and Odd arrays haven't the same value"
+    return comparisonResultTotal
 }
 
-if(averageEven > averageOdd){
-    comparisonResult.push("The Average value is greater in the Even array")
-}else{
-    comparisonResult.push("The Average value is greater in the Odd array")
+let comparisonResultTotal = comparisonTotal (totalEven,totalOdd)
+console.log(comparisonResultTotal)
+
+function comparisonAverage(arr1, arr2){
+    let comparisonResultAverage = arr1 > arr2 ? "The Average value is greater in the Even array" : arr1 < arr2 ? "The Average value is greater in the Odd array" : "The Average value have the same value";
+    return comparisonResultAverage;
 }
 
-for(i = 0; i < comparisonResult.length; i++){
-    console.log(comparisonResult[i])
-}
-
+let comparisonResultAverage = comparisonAverage(averageEven,averageOdd)
+console.log(comparisonResultAverage)
 
